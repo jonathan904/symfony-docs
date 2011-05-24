@@ -1,6 +1,7 @@
 Symfony2 Documentation
 ======================
-
+HOLA MUNDO
+----------
 Quick Tour
 ----------
 
