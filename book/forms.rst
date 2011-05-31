@@ -714,7 +714,7 @@ Embedded Forms
 --------------
 
 Often, you'll want to build a form that will include fields from many different
-objects. For example, a registration form may contain data belonging to
+objects. For example, a registration form must contain data belonging to
 a ``User`` object as well as many ``Address`` objects. Fortunately, this
 is easy and natural with the form component.
 
