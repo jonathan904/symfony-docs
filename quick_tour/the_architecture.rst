@@ -108,6 +108,10 @@ to use pre-built features packaged in third-party bundles or to distribute
 your own bundles. It makes it easy to pick and choose which features to enable
 in your application and optimize them the way you want.
 
+For beginners:
+Within the project we created a file.php usually called, the name of the folder of my project, followed by the name of the bundle folder. That is, if my project is called JAS, and the folder of my bundle is called TutorialBundle, my Bundle JASTutorialBundle be called, that is to follow a standard symfony project.
+
+
 Registering a Bundle
 ~~~~~~~~~~~~~~~~~~~~
 

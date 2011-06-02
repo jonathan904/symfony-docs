@@ -19,6 +19,19 @@ it yet, you can read its excellent `documentation`_.
 
     Symfony2 works with PHPUnit 3.5.11 or later.
 
+For linux:
+How to install phpunit in 2 steps:
+1. Installing and upgrading PHP Pear.
+To install phpunit, go to the console:
+      $ sudo apt-get update
+      $ sudo apt-get install php-pear
+      $ sudo pear upgrade pear
+2. Adding channels, downloading and installing PHPUnit
+     $ pear channel-discover pear.phpunit.de
+     $ pear channel-discover components.ez.no
+     $ pear channel-discover pear.symfony-project.com
+     $pear install phpunit / PHPUnit
+
 The default PHPUnit configuration looks for tests under the ``Tests/``
 sub-directory of your bundles:
 
@@ -121,12 +134,24 @@ for ``HelloController`` that reads as follows::
         }
     }
 
-The ``createClient()`` method returns a client tied to the current application::
+The ``createClient()`` method returns a client tied to the current application.This client is the one used during the test, the client can perform all actions that would conduct a customer in practice::
 
     $crawler = $client->request('GET', 'hello/Fabien');
 
 The ``request()`` method returns a ``Crawler`` object which can be used to
 select elements in the Response, to click on links, and to submit forms.
+
+..Notes:: 
+	The functions that are protected by authentication security, the customer must enter the simulation through the system and apply the tests to each of the 		functions. If authentication is not performed, will not be possible to test these functions.It is very important to use the same client throughout the test. 
+ 	For example:
+	$client = $this->createClient();
+        $crawler = $client->request('GET', '/login');
+        $form = $crawler->selectButton('login')->form();
+        $client->submit($form,array('_username'=>'admin',
+                                    '_password'=>'adminpass',));
+	//....your test
+
+
 
 .. tip::
 

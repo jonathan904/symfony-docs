@@ -56,6 +56,9 @@ match. In this example, if you try to request the ``/demo/hello/Fabien.js``
 resource, you will get a 404 HTTP error, as it does not match the ``_format``
 requirement.
 
+For beginners: 
+the controllers are created in a folder called Controller, in our project folder and turn in the respective folder Bundle. The name of the Controller (by convention) ends in the word Controller, that is, if my Controller is called tutorial, you should be tutorialController. 
+
 Redirecting and Forwarding
 --------------------------
 

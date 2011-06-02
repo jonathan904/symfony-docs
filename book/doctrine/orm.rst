@@ -234,6 +234,13 @@ you just need to run the following command:
 Now your database will be updated and the new column added to the database
 table.
 
+In this case we can easily obtain an object of our entity from the id as follows:
+
+* @extra: Route ("/ path / {id} /", name = "_path_name)
+* @extra ParameterConverter ("parameter" class = "MyBundle: Entity")
+
+Having done this the parameter that is entered by the function will be an object of our entity
+
 .. index::
    single: Configuration; Doctrine ORM
    single: Doctrine; ORM Configuration
@@ -284,6 +291,9 @@ The following example shows an overview of the caching configurations:
                 host: localhost
                 port: 11211
                 instance_class: Memcache
+
+ 
+This will allow us to specify that everything will work from PHP
 
 Mapping Configuration
 ~~~~~~~~~~~~~~~~~~~~~
@@ -352,6 +362,18 @@ The following configuration shows a bunch of mapping examples:
                     dir: %kernel.root_dir%/../src/vendor/DoctrineExtensions/lib/DoctrineExtensions/Entity
                     prefix: DoctrineExtensions\Entity\
                     alias: DExt
+You should be aware that you can also espeficar the configuration of each bundle, as follows:
+
+/ app / config / config.yml
+orm:
+         auto_generate_proxy_classes:% kernel.debug%
+         default_entity_manager: default
+         entity_managers:
+             default:
+                 mappings:
+                     AcmeDemoBundle: ~
+                     MyBundle:
+                         type: annotation
 
 Multiple Entity Managers
 ~~~~~~~~~~~~~~~~~~~~~~~~

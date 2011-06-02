@@ -666,6 +666,10 @@ Placing the form logic into its own class means that the form can be easily
 reused elsewhere in your project. This is the best way to create forms, but
 the choice is ultimately up to you.
 
+The documentation for beginners on this is very confusing, since it takes into account detailed aspects for understanding the concepts and apply them easily. It should make a tutorial step by step detail to ensure a specific outcome.
+
+It should specify about AbstractType class that contains methods and how to get data for Form class
+
 .. index::
    single: Forms; Doctrine
 
@@ -714,7 +718,7 @@ Embedded Forms
 --------------
 
 Often, you'll want to build a form that will include fields from many different
-objects. For example, a registration form must contain data belonging to
+objects. For example, a registration form must (required) contain data belonging to
 a ``User`` object as well as many ``Address`` objects. Fortunately, this
 is easy and natural with the form component.
 
